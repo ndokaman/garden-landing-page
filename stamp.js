@@ -68,6 +68,9 @@ function handleEnter() {
     img.src = img.src;
     document.querySelector(".garden-page").classList.add("visible");
     stamps.forEach(s => s.classList.add("fade-out"));
+    setTimeout(() => {
+      document.querySelectorAll(".stamp").forEach(s => s.remove());
+    }, 600);
   }, 400);
 }
 
