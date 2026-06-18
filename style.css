@@ -2,15 +2,12 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     background-color: white;
 }
-
 body:has(.enter-page.exit) {
     background-color: black;
 }
-
 .enter-page {
     position: fixed;
     width: 100vw;
@@ -20,11 +17,9 @@ body:has(.enter-page.exit) {
     transition: background-color 0.4s ease;
     z-index: 1;
 }
-
 .enter-page.exit {
     background-color: black;
 }
-
 .stamp {
     position: fixed;
     font-size: 20px;
@@ -35,15 +30,12 @@ body:has(.enter-page.exit) {
     transition: color 0.2s ease, opacity 0.4s ease;
     z-index: 3;
 }
-
 .stamp.lighten {
     color: white;
 }
-
 .stamp.fade-out {
     opacity: 0;
 }
-
 .garden-page {
     position: fixed;
     width: 100vw;
@@ -57,31 +49,26 @@ body:has(.enter-page.exit) {
     transition: opacity 0.2s ease;
     overflow-y: auto;
 }
-
 .garden-page.visible {
     opacity: 1;
     pointer-events: auto;
 }
-
 .garden-layout {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
-
 .img-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
 }
-
 .garden-layout img {
     width: 25rem;
     display: block;
 }
-
 .garden-label {
     font-size: 3rem;
     font-family: sans-serif;
@@ -89,11 +76,9 @@ body:has(.enter-page.exit) {
     margin-top: 1rem;
     transition: color 0.3s ease;
 }
-
 .garden-page:has(.bottom a:hover) .garden-label {
     color: #FFA55A;
 }
-
 .center-hover-label {
     position: fixed;
     top: 50%;
@@ -107,18 +92,15 @@ body:has(.enter-page.exit) {
     pointer-events: none;
     z-index: 10;
 }
-
 .center-hover-label.visible {
     opacity: 1;
 }
-
 .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20rem;
 }
-
 .bottom a {
     margin-top: 50px;
     font-size: 13px;
@@ -127,40 +109,37 @@ body:has(.enter-page.exit) {
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
 .bottom a:hover {
     color: #FFA55A;
 }
-
 @media (max-width: 768px) {
     .enter-page {
         cursor: pointer;
         touch-action: manipulation;
     }
-
-
     .garden-layout {
-        height: 100vh;
+        height: auto;
         justify-content: center;
+        
     }
-
     .garden-layout img {
         width: 65vw;
-        max-height: 45vh;
+        max-height: 40vh;
         object-fit: contain;
     }
-
     .garden-label {
         font-size: 3.5rem;
     }
-
     .bottom {
-        padding-top: 0;
+        padding-top: 4rem;
         padding-bottom: 2.5rem;
-      
+        flex-direction: column;
+        align-items: center;
     }
-    .bottom a{
+    .bottom a {
         font-size: 12px;
-    
+    }
+    .center-hover-label {
+        display: none;
     }
 }
