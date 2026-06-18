@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+body:has(.enter-page.exit) {
+    background-color: black;
+}
+
+.enter-page {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    cursor: none;
+    background-color: white;
+    transition: background-color 0.4s ease;
+    z-index: 1;
+}
+
+.enter-page.exit {
+    background-color: black;
+}
+
+.stamp {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    user-select: none;
+    color: black;
+    font-family: sans-serif;
+    transition: color 0.2s ease, opacity 0.4s ease;
+    z-index: 3;
+}
+
+.stamp.lighten {
+    color: white;
+}
+
+.stamp.fade-out {
+    opacity: 0;
+}
+
+.garden-page {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    overflow-y: auto;
+}
+
+.garden-page.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.garden-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.garden-layout img {
+    width: 25rem;
+    display: block;
+}
+
+.garden-label {
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: white;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.garden-page:has(.bottom a:hover) .garden-label {
+    color: #FFA55A;
+}
+
+.center-hover-label {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: #FFA55A;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.center-hover-label.visible {
+    opacity: 1;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20rem;
+}
+
+.bottom a {
+    margin-top: 50px;
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.bottom a:hover {
+    color: #FFA55A;
+}
+
+@media (max-width: 768px) {
+    .enter-page {
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+
+    .garden-layout {
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .garden-layout img {
+        width: 65vw;
+        max-height: 45vh;
+        object-fit: contain;
+    }
+
+    .garden-label {
+        font-size: 3.5rem;
+    }
+
+    .bottom {
+        padding-top: 0;
+        padding-bottom: 2.5rem;
+      
+    }
+    .bottom a{
+        font-size: 12px;
+    
+    }
+}
