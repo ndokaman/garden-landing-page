@@ -155,7 +155,7 @@ body:has(.enter-page.exit) {
     }
 
     .bottom {
-        padding-top: 3rem;
+        padding-top: 2.5rem;
         padding-bottom: 2.5rem;
         flex-direction: column;
         align-items: center;
